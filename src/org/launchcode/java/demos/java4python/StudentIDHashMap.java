@@ -24,10 +24,11 @@ public class StudentIDHashMap {
 
                 System.out.println("Name associated with ID: ");
                 String newName = in.nextLine();
+                //in.nextLine();
                 students.put(newStudent, newName);
 
                 // Read in the new line before looping back
-                //in.nextLine();
+
             }
 
         } while(newStudent != 0);
