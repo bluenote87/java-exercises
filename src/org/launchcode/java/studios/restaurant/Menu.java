@@ -1,26 +1,30 @@
 package org.launchcode.java.studios.restaurant;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Menu {
 
     private static Date lastUpdated = new Date();
-    protected static String[] categories = {"appetizer", "main course", "dessert"};
-    private MenuItem menuItems = new MenuItem();
+    private static String[] categories = {"appetizer", "main course", "dessert"}; //0, 1 or 2
+    private ArrayList<MenuItem> menuItems = new ArrayList<>();
 
     public Menu() {
         Date lastUpdated = new Date();
     }
 
     public void setMenu() {
-        MenuItem menuItems = new MenuItem();
+        MenuItem newMenuItem = new MenuItem();
+        menuItems.add(newMenuItem);
         Date lastUpdated = new Date();
     }
     public void setMenu(String aName, int aCategory, String aDescription, double aPrice) {
-        MenuItem menuItems = new MenuItem(aName, categories[aCategory], aDescription, aPrice);
+        MenuItem newMenuItem = new MenuItem(aName, categories[aCategory], aDescription, aPrice);
+        menuItems.add(newMenuItem);
         Date lastUpdated = new Date();
     }
-    public MenuItem getMenu() {
+    public ArrayList<MenuItem> getMenu() {
         return menuItems;
     }
+    public Date getMenuDate() { return lastUpdated; }
 }

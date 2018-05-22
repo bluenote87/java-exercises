@@ -8,16 +8,15 @@ public class MenuItem {
     private String name;
     private String category;
     private String description;
-    private double price = 0.0;
-    private boolean isNew = true;
-    private Menu theMenu = new Menu();
+    private double price;
+    private boolean isNew;
 
 
     public MenuItem() {
         // default constructor
         Date addedIn = new Date();
         name = "New Item";
-        category = theMenu.categories[0];
+        category = "appetizer";
         description = "TBD";
         price = 1.0;
         isNew = true;
@@ -54,7 +53,7 @@ public class MenuItem {
     }
     public boolean isMenuItemNew() {
         Date rightNow = new Date();
-        long twoMonths = 5184000000;
+        long twoMonths = 5184000000; //2 months in milliseconds
         if ((rightNow.getTime() - addedIn.getTime()) > twoMonths ) {
             isNew = false;
         } else {
