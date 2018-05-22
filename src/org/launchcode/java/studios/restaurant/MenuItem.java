@@ -53,11 +53,12 @@ public class MenuItem {
     }
     public boolean isMenuItemNew() {
         Date rightNow = new Date();
-        long twoMonths = 5184000000; //2 months in milliseconds
+        long twoMonths = 5184000000L; //2 months in milliseconds
         if ((rightNow.getTime() - addedIn.getTime()) > twoMonths ) {
             isNew = false;
         } else {
             isNew = true;
         }
+        return isNew;
     }
 }
