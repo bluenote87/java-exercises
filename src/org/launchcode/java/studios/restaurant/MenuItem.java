@@ -63,6 +63,19 @@ public class MenuItem {
         return Objects.hash(name, category, description);
     }
 
+    public String toString() {
+        String seperator = "\n*****\n";
+        String newDescription = "";
+        this.isMenuItemNew();
+        if (this.isNew) {
+            newDescription = "\nThis is a new item!";
+        }
+        return seperator + this.name + "\nThis dish is a " + this.category + "\n" +
+                this.description + "\n" + "Price: $" + this.price + newDescription
+                + seperator;
+
+    }
+
     public double getMenuItemPrice() {
         return price;
     }

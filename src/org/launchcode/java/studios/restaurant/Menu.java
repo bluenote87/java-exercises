@@ -15,16 +15,17 @@ public class Menu {
 
     public void setMenu() {
         MenuItem newMenuItem = new MenuItem();
-        menuItems.add(newMenuItem);
+        this.menuItems.add(newMenuItem);
         Date lastUpdated = new Date();
     }
     public void setMenu(String aName, int aCategory, String aDescription, double aPrice) {
         MenuItem newMenuItem = new MenuItem(aName, categories[aCategory], aDescription, aPrice);
-        menuItems.add(newMenuItem);
+        this.menuItems.add(newMenuItem);
         Date lastUpdated = new Date();
     }
     public ArrayList<MenuItem> getMenu() {
         return menuItems;
     }
     public Date getMenuDate() { return lastUpdated; }
+    public String[] menuCategories() { return categories; }
 }
